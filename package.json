@@ -1,0 +1,28 @@
+{
+  "name": "Project-2",
+  "version": "1.0.0",
+  "description": "## MVP",
+  "main": "server.js",
+  "dependencies": {
+    "env": "^0.0.2",
+    "express-handlebars": "^3.1.0",
+    "express": "^4.17.1",
+    "sequelize": "^5.19.6"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ronak0624/Project-2.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ronak0624/Project-2/issues"
+  },
+  "homepage": "https://github.com/ronak0624/Project-2#readme"
+}
