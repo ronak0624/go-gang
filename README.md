@@ -2,7 +2,7 @@
 
 ## MVP
 
-### Group Go
+### GO Gang
  - **Who:** 18+, 2 people or more
  - **What:** group meetup for things to do
  - **Where:** in PNW
