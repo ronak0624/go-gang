@@ -1,8 +1,12 @@
+//Express dep
 var express = require("express");
 
+// Sets up the Express App
 var PORT = process.env.PORT || 8080;
-
 var app = express();
+
+// Requiring our models for syncing
+var db = require("./models/index")
 
 // Serve static content for the app from the "public" directory in the application directory.
 app.use(express.static("public"));
