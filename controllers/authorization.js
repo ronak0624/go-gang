@@ -8,7 +8,7 @@ router.get('/secret',function(req,res){
     if(req.session.user) {
         res.render('securepage',req.session.user);
     }else {
-        res.send('log in first jabroni!')
+        res.send("You're not logged in!");
     }
 })
 //get route to retrieve all users info, only for dev, remove from production
@@ -19,12 +19,12 @@ router.get('/allUsers',function(req,res){
 })
 
 //loads signup form
-router.get('/signup',function(req,res){
+router.get('/signUp',function(req,res){
     res.render('signup');
 })
 
 //creates new instance of user
-router.post('/signup',function(req,res){
+router.post('/signUp',function(req,res){
     console.log(req.body)
     db.User.create({
         name:req.body.name,
