@@ -2,23 +2,21 @@ $(document).ready(function () {
 
     $("#create-user-form").on("submit", function (event) {
         event.preventDefault();
+        console.log("im working")
         var newUser = {
-            firstName: $("#inputFirst4").val(),
-            lastName: $("#inputLast4").val(),
-            DOB: $("#inputDOB4").val(),
-            email: $("#inputEmailAddress").val(),
-            username: $("#inputUsername").val(),
-            city: $("#inputCity").val(),
-            zipCode: $("#inputZip").val()
+            firstName: $("#inputFirst4").val().trim(),
+            lastName: $("#inputLast4").val().trim(),
+            DOB: $("#inputDOB4").val()
         }
         var userAnswers = {
-            answer1: $(".answer-one").val(),
-            answer2: $(".answer-two").val(),
-            answer3: $(".answer-three").val()
+            answer1: $("#exampleFormControlTextarea1").val().trim(),
+            answer2: $("#exampleFormControlTextarea2").val().trim(),
+            answer3: $("#exampleFormControlTextarea3").val().trim()
         }
-        $.post("/api/signUp",newUser,userAnswers).then(function(data){
+
+        $.post("/auth/signUp", newUser, userAnswers).then(function (data) {
             console.log(data)
         })
+        console.log(newUser, userAnswers);
     })
-
 });
