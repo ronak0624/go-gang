@@ -1,20 +1,17 @@
 $(document).ready(function () {
 
-    $("#create-user").on("submit", function (event) {
+    $("#create-user-form").on("submit", function (event) {
         event.preventDefault();
+        console.log("im working")
         var newUser = {
             firstName: $("#inputFirst4").val().trim(),
             lastName: $("#inputLast4").val().trim(),
-            DOB: $("#inputDOB4").val(),
-            email: $("#inputEmailAddress").val().trim(),
-            username: $("#inputUsername").val().trim(),
-            city: $("#inputCity").val().trim(),
-            zipCode: $("#inputZip").val().trim()
+            DOB: $("#inputDOB4").val()
         }
         var userAnswers = {
-            answer1: $(".answer-one").val().trim(),
-            answer2: $(".answer-two").val().trim(),
-            answer3: $(".answer-three").val().trim()
+            answer1: $("#exampleFormControlTextarea1").val().trim(),
+            answer2: $("#exampleFormControlTextarea2").val().trim(),
+            answer3: $("#exampleFormControlTextarea3").val().trim()
         }
         $.post("/api/signUp", newUser, userAnswers).then(function (data) {
             console.log(data)
