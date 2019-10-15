@@ -8,6 +8,7 @@ router.use('/auth',authRoutes);
 router.get('/',function(req,res){
     res.render('index');
 });
+
 router.get('/liveFeed',function(req,res){
     res.render('liveFeed');
 });
