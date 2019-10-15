@@ -1,6 +1,18 @@
-//TODO:NEW POST MODAL
-//TODO:EVENT INFO MODAL
-//TODO:MEMBERS MODAL
+<nav class="navbar navbar-light bg-light">
+    <div class="d-flex justify-content-start">
+        <h1>GG</h1>
+    </div>
+
+    <div class="d-flex justify-content-center">
+        <h1>GO Gang</h1>
+    </div>
+
+    <div class="d-flex justify-content-end"> 
+       
+        <a href="/auth/login"><button type="button" class="btn btn-outline-success" id="loginButton">Login</button></a>
+
+    </div>    
+ </nav>
 
 <!-- Sign Up -->
     <div class="container">
@@ -10,7 +22,7 @@
                 <p class="text-center">Get started for free!</p>
             </div>
             <hr>
-            <div class="form-row">
+            <div class="form-row" id="signUpForm">
                 <div class="form-group col-md-4">
                     <label for="inputFirst4">First Name</label>
                     <input type="first" class="form-control" id="inputFirst4" placeholder="First Name">
@@ -24,7 +36,7 @@
                     <input type="dob" class="form-control" id="inputDOB4" placeholder="01/31/2001">
                 </div>
             </div>
-            <div class="form-row">
+            {{!-- <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="inputEmailAddress">Email Address</label>
                     <input type="text" class="form-control" id="inputEmailAddress" placeholder="name@domain.com">
@@ -61,7 +73,7 @@
                     <label for="inputZip">Zip</label>
                     <input type="text" class="form-control" id="inputZip">
                 </div>
-            </div>
+            </div> --}}
 
             <div class="col">
                 <h3 class="text-center">Answer 3 Icebreakers</h3>
@@ -118,7 +130,7 @@
             </div>
             <div class="row" style="justify-content: center">
 
-                <button type="submit" style="justify-content: center" class="btn btn-outline-success">Sign Up</button>
+                <button type="submit" class="btn btn-outline-success">Sign Up</button>
             </div>
         </form>
     </div>

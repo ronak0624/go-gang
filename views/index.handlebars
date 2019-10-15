@@ -1,60 +1,66 @@
- <!-- Index -->
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                <h3 class="text-center">Ready To GO?</h3>
-                <br>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Necessitatibus exercitationem quis omnis aperiam fugiat voluptatum cupiditate blanditiis, quod quas sequi molestias nulla autem. Corporis, reprehenderit quis? Ab recusandae aliquam
-                    totam!
-                </p>
-            </div>
+ {{!-- NavBar --}}
 
-            <div class="col">
-                <div class="row">
-                    <div class="col">
-                        <h3 class="text-center">GO Gang</h3>
-                    </div>
-                </div>
-                <br>
-                <div class="row">
-                    <div class="col">
-                        <p class="text-center">Please log in or sign up for an account</p>
-                    </div>
-                </div>
-                <form>
-                    <div class="form-group">
-                        <label for="formGroupExampleInput">Username</label>
-                        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="name@domain.com">
-                    </div>
-                    <br>
-                    <div class="form-group">
-                        <label for="formGroupExampleInput2">Password</label>
-                        <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Password">
-                    </div>
-                    <br>
-                    <div class="row">
-                        <div class="col">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="gridCheck1">
-                                <label class="form-check-label" for="gridCheck1">
-                                        Remember Me
-                                    </label>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <a href="#">Forgot Password</a>
-                        </div>
-                    </div>
-                    <br>
-                    <div class="row">
-                        <div class="col">
-                            <button type="button" class="btn btn-outline-success">Login</button>
-                        </div>
-                        <div class="col">
-                            <button type="button" class="btn btn-success">Sign Up</button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
+ <nav class="navbar navbar-light bg-light">
+    <div class="d-flex justify-content-start">
+        <h1>GG</h1>
     </div>
+
+    <div class="d-flex justify-content-center">
+        <h1>GO Gang</h1>
+    </div>
+
+    <div class="d-flex justify-content-end"> 
+       
+        <a href="/auth/login"><button type="button" class="btn btn-outline-success" id="loginButton">Login</button></a>
+
+    </div>    
+ </nav>
+
+ <!-- Index -->
+
+ <div class="bd-example">
+     <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+         <ol class="carousel-indicators">
+             <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+             <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+             <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+         </ol>
+         <div class="carousel-inner">
+             <div class="carousel-item active">
+                 <img src="images/skiing-snowboarding.jpg" class="d-block w-100" alt="Biking">
+                 <div class="carousel-caption d-none d-md-block">
+                     <h1>GO Gang</h1>
+                     <h3>Be as spontaneous as the weather in the PNW!</h3>
+                 </div>
+             </div>
+             <div class="carousel-item">
+                 <img src="images/hiking.jpg" class="d-block w-100" alt="Hiking">
+                 <div class="carousel-caption d-none d-md-block">
+                     <h1>Ready to GO?</h1>
+                     <h3>Join a group or start one.</h3>
+                 </div>
+             </div>
+             <div class="carousel-item">
+                 <img src="images/horse-back-riding.jpg" class="d-block w-100" alt="Horse Riding">
+                 <div class="carousel-caption d-none d-md-block">
+                     <h1>Please log in or sign up for an account.</h1>
+                     <h3>It's easy to GO.</h3>
+                 </div>           
+         </div>
+         <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+             <span class="sr-only">Previous</span>
+         </a>
+         <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+             <span class="carousel-control-next-icon" aria-hidden="true"></span>
+             <span class="sr-only">Next</span>
+         </a>
+     </div>
+ </div>
+ <div class="container">
+     <div class="row" style="justify-content: center">
+         
+             <a href="/auth/signUp"><button type="button" class="btn btn-success" id="signUpButton">Sign Up</button></a>
+         </div>
+
+     </div>
