@@ -20,6 +20,7 @@ module.exports = function (sequelize, DataTypes) {
     User.associate = function (models) {
         User.hasMany(models.Post);
         User.hasMany(models.Comment);
+        User.belongsToMany(models.Post, {as: 'Attendee'});
         // add associations here
         // ex:User.hasMany(models.BlogPost);
     };
