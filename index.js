@@ -24,14 +24,15 @@ var exphbs = require('express-handlebars');
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
 //initializing sessions on our server, basically boilerplate
-//app.use(session({ secret: process.env.SESSION_SECRET, resave: true, saveUninitialized: true }));
+app.use(session({ secret:"keyboard kat", resave: true, saveUninitialized: true }));
 
 
 app.use('/', allRoutes);
 
+//importing our data from 
 
-db.sequelize.sync({ force: false }).then(function() {
+db.sequelize.sync({ force: false}).then(function() {
     app.listen(PORT, function() {
-        console.log('App listening on PORT ' + PORT);
+    console.log('App listening on PORT ' + PORT);
     });
 });
