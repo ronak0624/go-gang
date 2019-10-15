@@ -15,6 +15,13 @@ module.exports = function (sequelize, DataTypes) {
                 len: [8]
             }
         },
+        DOB: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate: {
+                len: [8]
+            }
+        },
         q1: {
             type: DataTypes.STRING,
             allowNull: false,

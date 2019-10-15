@@ -11,13 +11,26 @@ module.exports = function (sequelize, DataTypes) {
             type: DataTypes.TEXT,
             allowNull: false,
             len: [1]
+        },
+        location: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            len: [1]
+        },
+        category: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            len: [1]
+        },
+        date: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            len: [1]
         }
     });
 
     Post.associate = function (models) {
-
-        // We're saying that a Post should belong to an Author
-        // A Post can't be created without an Author due to the foreign key constraint
+        //Post should belong to an User and has many Comments 
         Post.belongsTo(models.User);
         // Post.hasMany(models.User);
         Post.hasMany(models.Comment);
