@@ -1,7 +1,7 @@
 $(document).ready(function (event) {
     event.preventDefault();
 
-    $("#login").on("submit", function (event) {
+    $("#login").on("submit", function(event){
         event.preventDefault();
         //grabs the values from username and password
         var loginInfo = {
