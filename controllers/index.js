@@ -11,8 +11,8 @@ router.get('/', function (req, res) {
 router.get('/signup', function (req, res) {
     res.render('signUp')
 })
-router.get('/catagories', function (req, res) {
-    res.render('catagories')
+router.get('/categories', function (req, res) {
+    res.render('categories')
 })
 router.get('/livefeed', function (req, res) {
     res.render('liveFeed')
