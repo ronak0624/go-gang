@@ -17,7 +17,7 @@ module.exports = function (sequelize, DataTypes) {
         }
     });
 
-    User.associate = function (models) {
+    User.associate = function(models) {
         // add associations here
         // ex:User.hasMany(models.BlogPost);
     };

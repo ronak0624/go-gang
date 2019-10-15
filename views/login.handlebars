@@ -1,18 +1,11 @@
-<nav class="navbar navbar-light bg-light">
-    <div class="d-flex justify-content-start">
-        <h1>GG</h1>
-    </div>
+<h1>LOGIN PAGE</h1>
 
-    <div class="d-flex justify-content-center">
-        <h1>GO Gang</h1>
-    </div>
 
-    <div class="d-flex justify-content-end"> 
-
-        <a href="/auth/signUp"><button type="button" class="btn btn-success" id="signUpButton">Sign Up</button></a>
-    
-    </div>    
- </nav>
+<form action="/auth/login"method="POST">
+    <input type="text" name = "name" placeholder="Username" id="username">
+    <input type="password" name = "password" placeholder="password" id="password">
+    <input type="submit" value="Go Go go!" id="login">
+</form>
 
 <div class="container">
     <div class="row">
@@ -36,3 +29,4 @@
         </div>
     </form>
 </div>
+
