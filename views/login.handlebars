@@ -1,10 +1,41 @@
-<h1>LOGIN PAGE</h1>
+<nav class="navbar navbar-light bg-light">
+    <div class="d-flex justify-content-start">
+        <h1>GG</h1>
+    </div>
 
+    <div class="d-flex justify-content-center">
+        <h1>GO Gang</h1>
+    </div>
 
-<form action="/auth/login"method="POST">
-    <input type="text" name = "name" placeholder="Username">
-    <input type="password" name = "password" placeholder="password" >
-    <input type="submit" value="Go Go go!">
-</form>
+    <div class="d-flex justify-content-end"> 
 
-<a href="/auth/signup">First time? sign up here!</a>
+        <a href="/auth/signUp"><button type="button" class="btn btn-success" id="signUpButton">Sign Up</button></a>
+    
+    </div>    
+ </nav>
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <p class="text-center">Please log in or sign up for an account</p>
+        </div>
+    </div>
+    <form action="/auth/login" method="POST">
+        <div class="form-group">
+            <label for="formGroupExampleInput">Username</label>
+            <input type="text" class="form-control" name="name" placeholder="Username" id="loginForm">
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="formGroupExampleInput2">Password</label>
+            <input type="password" class="form-control" name="password" placeholder="password">
+        </div>
+        <br>
+        <div class="row" style="justify-content: center">
+             <a href="/auth/categories">
+                <input type="submit" value="GO GO GO!" class="btn btn-outline-success" id="loginButton" style="justify-content: center">
+             </a>
+            
+        </div>
+    </form>
+</div>
