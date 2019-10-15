@@ -13,7 +13,8 @@ $(document).ready(function () {
             answer2: $("#exampleFormControlTextarea2").val().trim(),
             answer3: $("#exampleFormControlTextarea3").val().trim()
         }
-        $.post("/api/signUp", newUser, userAnswers).then(function (data) {
+
+        $.post("/auth/signUp", newUser, userAnswers).then(function (data) {
             console.log(data)
         })
         console.log(newUser, userAnswers);
