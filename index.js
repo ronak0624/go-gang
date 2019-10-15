@@ -26,9 +26,7 @@ app.set('view engine', 'handlebars');
 //initializing sessions on our server, basically boilerplate
 //app.use(session({ secret: process.env.SESSION_SECRET, resave: true, saveUninitialized: true }));
 
-
 app.use('/', allRoutes);
-
 
 db.sequelize.sync({ force: false }).then(function() {
     app.listen(PORT, function() {
