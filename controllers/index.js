@@ -14,5 +14,12 @@ router.get('/signup', function (req, res) {
 router.get('/catagories', function (req, res) {
     res.render('catagories')
 })
+router.get('/livefeed', function (req, res) {
+    res.render('liveFeed')
+})
+
+router.get('/login', function (req, res) {
+    res.render('login')
+})
 
 module.exports = router;

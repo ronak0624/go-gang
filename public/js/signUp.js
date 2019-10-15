@@ -16,11 +16,9 @@ $(document).ready(function () {
             answer2: $(".answer-two").val(),
             answer3: $(".answer-three").val()
         }
-
-        console.log(newUser, userAnswers)
+        $.post("/api/signUp",newUser,userAnswers).then(function(data){
+            console.log(data)
+        })
     })
-
-
-
 
 });
