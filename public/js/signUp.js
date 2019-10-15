@@ -9,9 +9,12 @@ $(document).ready(function () {
             DOB: $("#inputDOB4").val()
         }
         var userAnswers = {
+            question1:$("#exampleFormControlSelect1").val(),
             answer1: $("#exampleFormControlTextarea1").val().trim(),
+            question2:$("#exampleFormControlSelect1").val(),
             answer2: $("#exampleFormControlTextarea2").val().trim(),
-            answer3: $("#exampleFormControlTextarea3").val().trim()
+            answer3: $("#exampleFormControlTextarea3").val().trim(),
+            question3:$("#exampleFormControlSelect1").val()
         }
 
         $.post("/auth/signUp", newUser, userAnswers).then(function (data) {
