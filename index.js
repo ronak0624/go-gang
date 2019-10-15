@@ -26,7 +26,6 @@ app.set('view engine', 'handlebars');
 //initializing sessions on our server, basically boilerplate
 app.use(session({ secret:"keyboard kat", resave: true, saveUninitialized: true }));
 
-
 app.use('/', allRoutes);
 
 //importing our data from 
