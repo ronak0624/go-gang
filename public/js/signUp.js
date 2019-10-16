@@ -15,7 +15,7 @@ $(document).ready(function () {
         }
 
         $.post("/auth/signUp", newUser, userAnswers).then(function (data) {
-            console.log(data)
+
         })
         console.log(newUser, userAnswers);
     })
