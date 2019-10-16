@@ -17,7 +17,7 @@
 
 <!-- Sign Up -->
 <div class="container">
-    <form id="create-user-form">
+    <form action="/auth/signUp" method="POST" id="create-user-form">
         <div class="col">
             <h3 class="text-center">Sign Up</h3>
             <p class="text-center">Get started for free!</p>
@@ -26,7 +26,7 @@
         <div class="form-row" id="signUpForm">
             <div class="form-group col-md-4">
                 <label for="inputFirst4">First Name</label>
-                <input type="first" class="form-control" id="inputFirst4" placeholder="First Name">
+                <input type="first" class="form-control" id="inputFirst4" name="firstname" placeholder="First Name">
             </div>
             <div class="form-group col-md-4">
                 <label for="inputLastName4">Last Name</label>
@@ -131,8 +131,8 @@
             <textarea class="form-control" id="exampleFormControlTextarea3" rows="2"></textarea>
         </div>
         <div class="row" style="justify-content: center">
-
-            <button type="submit" class="btn btn-outline-success" id="create-user">Let's GO</button>
+            <input type="submit" value="Signup">
+            {{!-- <button type="submit" class="btn btn-outline-success" id="create-user">Let's GO</button> --}}
         </div>
     </form>
 </div>
