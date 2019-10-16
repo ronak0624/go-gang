@@ -29,14 +29,13 @@ router.post('/signUp', function (req, res) {
     db.User.create({
         name: req.body.name,
         password: req.body.password,
-        email: req.body.email,
-        age: req.body.age,
+        DOB: req.body.DOB,
         q1: req.body.q1,
         a1: req.body.a1,
         q2: req.body.q2,
         a2: req.body.a2,
         q3: req.body.q3,
-        a3: req.body.a3,
+        a3: req.body.a3
     }).then(function (newUser) {
         console.log(newUser)
         res.json(newUser);
