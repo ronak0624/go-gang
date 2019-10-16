@@ -1,17 +1,19 @@
-$(document).ready(function (event) {
-    event.preventDefault();
+$(document).ready(function () {
 
-    $("#login").on("submit", function(event){
+    $("#login").on("submit", function (event) {
         event.preventDefault();
+
         //grabs the values from username and password
         var loginInfo = {
-            userName:$("#username").val(),
-            password:$("#password").val()
+            username: $("#inputUsername").val().trim(),
+            password: $("#inputPassword").val().trim()
         }
         //sending user loginInfo data 
-     $.post("/api/login",loginInfo).then(function(data){
-        console.log(data)
-     })
+        $.post("/auth/login", loginInfo).then(function (data) {
+            console.log(data)
+            window.location.href = "/categories"
+        })
+        console.log(loginInfo)
     })
 
 });
