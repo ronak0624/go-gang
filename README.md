@@ -1,8 +1,8 @@
-# Project-2
+# Go Gang
 
-## MVP
+This app called Go Gang is designend 
 
-### Group Go
+### Go Gang
  - **Who:** 18+, 2 people or more
  - **What:** group meetup for things to do
  - **Where:** in PNW
@@ -10,5 +10,5 @@
  - **Why:** to solve the issue of wanting to do activities socially but no one else to go with
  - **How:** filters for age preference, location pref, activities pref, date pref
 
-### Wireframes
-
+Deployed Heroku Link:
+https://go-gang.herokuapp.com/
