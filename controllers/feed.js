@@ -2,15 +2,9 @@ var feedRouter = require("express").Router();
 var db = require("../models")
 
 feedRouter.route("/posts")
-    .post(function (req, res) {
-        console.log("post request made")
-        db.Post.create(req.body).then(function (dbPost) {
-            res.json(dbPost);
-        });
-    });
     .get(function (req, res) {
         var query = {};
-        if (req.query.author_id) {
+        if (req.query.user_id) {
             query.UserId = req.query.user_id;
         }
         db.Post.findAll({
@@ -19,10 +13,9 @@ feedRouter.route("/posts")
         }).then(function (dbPost) {
             res.json(dbPost);
         });
-    })
-    .put(function (req, res) {
-        //update
-    })
+    });
+
+feedRouter.route("/posts")
     .delete(function (req, res) {
         db.Post.destroy({
             where: {
@@ -31,5 +24,6 @@ feedRouter.route("/posts")
         }).then(function (dbPost) {
             res.json(dbPost);
         });
-    })
+    });
+
 module.exports = feedRouter;

@@ -2,7 +2,7 @@ var express = require("express");
 var router = express.Router();
 var db = require("../models");
 var authRoutes = require('./authorization');
-var feedRouter = require ('./feed')
+var feedRouter = require ('./feed');
 
 //appends "/auth/" to all routes imported from authorization.js
 router.use('/auth', authRoutes);

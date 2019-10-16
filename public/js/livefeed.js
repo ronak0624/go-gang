@@ -1,8 +1,10 @@
 $(document).ready(function() {
     // Getting jQuery references to the post body, title, form, and author select
-    var bodyInput = $("#body");
     var titleInput = $("#title");
-    var stampInput = $("#stamp");
+    var bodyInput = $("#body");
+    var locationInput = $("#location");
+    var dateInput = $("#date");
+    var categoryInput = $("#category");
     var cmsForm = $("#cms");
     var userSelect = $("#user");
     // Adding an event listener for when the form is submitted
@@ -16,12 +18,12 @@ $(document).ready(function() {
   
     // If we have this section in our url, we pull out the post id from the url
     // In '?post_id=1', postId is 1
-    if (url.indexOf("?post_id=") !== -1) {
+    if (url.indexOf("?Post_id=") !== -1) {
       postId = url.split("=")[1];
-      getPostData(postId, "post");
+      getPostData(postId, "Post");
     }
     // Otherwise if we have an author_id in our url, preset the author select box to be our Author
-    else if (url.indexOf("?user_id=") !== -1) {
+    else if (url.indexOf("?User_id=") !== -1) {
       userId = url.split("=")[1];
     }
   
@@ -32,21 +34,19 @@ $(document).ready(function() {
     function handleFormSubmit(event) {
       event.preventDefault();
       console.log("submitted")
-      // Wont submit the post if we are missing a body, title, or author
-      //if (!titleInput.val().trim() || !bodyInput.val().trim() || !userSelect.val()) {
-       // return;
-     // }
       // Constructing a newPost object to hand to the database
       var newPost = {
-        title: titleInput
-          .val()
-          .trim(),
-        body: bodyInput
-          .val()
-          .trim(),
-        UserId: userSelect.val()
+        title: titleInput.val().trim(),
+        body: bodyInput.val().trim(),
+        location: locationInput.val().trim(),
+        category: categoryInput.val().trim(),
+        date: dateInput.val().trim()
       };
-  
+      $.post("/createPost", function(data){
+        req.body = newPost;
+      }).then(function(res){
+        console.log(res);
+      });
       // If we're updating a post run updatePost to update a post
       // Otherwise run submitPost to create a whole new post
       if (updating) {
@@ -66,7 +66,7 @@ $(document).ready(function() {
                 /* global moment */  
               
                 // blogContainer holds all of our posts
-                var blogContainer = $(".blog-container");
+                var postContainer = $(".post-container");
                 var postCategorySelect = $("#category");
                 // Click events for the edit and delete buttons
                 $(document).on("click", "button.delete", handlePostDelete);
@@ -77,10 +77,10 @@ $(document).ready(function() {
                 // The code below handles the case where we want to get blog posts for a specific author
                 // Looks for a query param in the url for author_id
                 var url = window.location.search;
-                var authorId;
-                if (url.indexOf("?author_id=") !== -1) {
-                  authorId = url.split("=")[1];
-                  getPosts(authorId);
+                var userId;
+                if (url.indexOf("?User_id=") !== -1) {
+                  userId = url.split("=")[1];
+                  getPosts(userId);
                 }
                 // If there's no authorId we just get all posts as usual
                 else {
@@ -89,48 +89,35 @@ $(document).ready(function() {
               
               
                 // This function grabs posts from the database and updates the view
-                function getPosts(author) {
-                  authorId = author || "";
-                  if (authorId) {
-                    authorId = "/?author_id=" + authorId;
+                function getPosts(user) {
+                  userId = user || "";
+                  if (userId) {
+                    userId = "/?User_id=" + userId;
                   }
-                  $.get("/api/posts" + authorId, function(data) {
+                  $.get("/api/posts" + userId, function(data) {
                     console.log("Posts", data);
                     posts = data;
                     if (!posts || !posts.length) {
-                      displayEmpty(author);
+                      displayEmpty(user);
                     }
                     else {
                       initializeRows();
                     }
                   });
                 }
-              
-                // This function does an API call to delete posts
-                function deletePost(id) {
-                  $.ajax({
-                    method: "DELETE",
-                    url: "/api/posts/" + id
-                  })
-                    .then(function() {
-                      getPosts(postCategorySelect.val());
-                    });
-                }
-              
+            
                 // InitializeRows handles appending all of our constructed post HTML inside blogContainer
                 function initializeRows() {
-                  blogContainer.empty();
+                  postContainer.empty();
                   var postsToAdd = [];
                   for (var i = 0; i < posts.length; i++) {
                     postsToAdd.push(createNewRow(posts[i]));
                   }
-                  blogContainer.append(postsToAdd);
+                  postContainer.append(postsToAdd);
                 }
               
                 // This function constructs a post's HTML
                 function createNewRow(post) {
-                  var formattedDate = new Date(post.createdAt);
-                  formattedDate = moment(formattedDate).format("MMMM Do YYYY, h:mm:ss a");
                   var newPostCard = $("<div>");
                   newPostCard.addClass("card");
                   var newPostCardHeading = $("<div>");
@@ -144,7 +131,7 @@ $(document).ready(function() {
                   var newPostTitle = $("<h2>");
                   var newPostDate = $("<small>");
                   var newPostAuthor = $("<h5>");
-                  newPostAuthor.text("Written by: " + post.Author.name);
+                  newPostAuthor.text("Written by: " + post.User.name);
                   newPostAuthor.css({
                     float: "right",
                     color: "blue",
@@ -154,13 +141,14 @@ $(document).ready(function() {
                   var newPostCardBody = $("<div>");
                   newPostCardBody.addClass("card-body");
                   var newPostBody = $("<p>");
-                  newPostTitle.text(post.title + " ");
+                  newPostLocation.text(post.location + " ");
                   newPostBody.text(post.body);
-                  newPostDate.text(formattedDate);
-                  newPostTitle.append(newPostDate);
+                  newPostDate.text(post.date);
+                  newPostCategory.text(post.category);
+                  newPostLocation.append(newPostLocation);
                   newPostCardHeading.append(deleteBtn);
                   newPostCardHeading.append(editBtn);
-                  newPostCardHeading.append(newPostTitle);
+                  newPostCardHeading.append(newPostLocation);
                   newPostCardHeading.append(newPostAuthor);
                   newPostCardBody.append(newPostBody);
                   newPostCard.append(newPostCardHeading);
@@ -242,7 +230,7 @@ $(document).ready(function() {
     // to create an author first
     function renderUserList(data) {
       if (!data.length) {
-        window.location.href = "/users";
+        window.location.href = "/allUsers";
       }
       $(".hidden").removeClass("hidden");
       var rowsToAdd = [];
@@ -272,7 +260,7 @@ $(document).ready(function() {
         data: post
       })
         .then(function() {
-          window.location.href = "/blog";
+          window.location.href = "/livefeed";
         });
     }
   });
