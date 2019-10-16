@@ -1,40 +1,41 @@
-module.exports = function(sequelize, DataTypes) {
+module.exports = function (sequelize, DataTypes) {
     var Post = sequelize.define("Post", {
-      title: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        validate: {
-          len: [1]
+        title: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate: {
+                len: [1]
+            }
+        },
+        body: {
+            type: DataTypes.TEXT,
+            allowNull: false,
+            len: [1]
+        },
+        location: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            len: [1]
+        },
+        category: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            len: [1]
+        },
+        date: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            len: [1]
         }
-      },
-      eventInfo: {
-        type: DataTypes.TEXT,
-        allowNull: false,
-        len: [1]
-      },
-      location: {
-        type: DataTypes.TEXT,
-        allowNull: false,
-      },
-      eventDate: {
-        type: DataTypes.TEXT,
-        allowNull: false
-      },
-      eventTime: {
-        type: DataTypes.TEXT,
-        allowNull: false
-      }
     });
-  
-    Post.associate = function(models) {
-      // We're saying that a Post should belong to an Author
-      // A Post can't be created without an Author due to the foreign key constraint
-      Post.belongsTo(models.User, {
-        foreignKey: {
-          allowNull: false
-        }
-      });
+
+    Post.associate = function (models) {
+        //Post should belong to an User and has many Comments 
+        Post.belongsTo(models.User);
+        // Post.hasMany(models.User);
+        Post.hasMany(models.Comment);
+        
     };
-  
+
     return Post;
-  };
+};
