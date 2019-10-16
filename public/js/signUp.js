@@ -4,19 +4,23 @@ $(document).ready(function () {
         event.preventDefault();
         console.log("im working")
         var newUser = {
-            firstName: $("#inputFirst4").val().trim(),
-            lastName: $("#inputLast4").val().trim(),
-            DOB: $("#inputDOB4").val()
-        }
-        var userAnswers = {
-            answer1: $("#exampleFormControlTextarea1").val().trim(),
-            answer2: $("#exampleFormControlTextarea2").val().trim(),
-            answer3: $("#exampleFormControlTextarea3").val().trim()
+            name: $("#inputFirst4").val().trim() + " " + $("#inputLast4").val().trim(),
+            username: $("#inputUsername").val().trim(),
+            password: $("#inputPassword").val().trim(),
+            DOB: $("#inputDOB4").val().trim(),
+            q1: $("#exampleFormControlSelect1").val(),
+            a1: $("#exampleFormControlTextarea1").val().trim(),
+            q2: $("#exampleFormControlSelect2").val(),
+            a2: $("#exampleFormControlTextarea2").val().trim(),
+            q3: $("#exampleFormControlSelect3").val(),
+            a3: $("#exampleFormControlTextarea3").val().trim()
         }
 
-        $.post("/auth/signUp", newUser, userAnswers).then(function (data) {
+        $.post("/auth/signUp", newUser).then(function (data) {
+            console.log(data)
+            window.location.href = "/auth/login"
 
         })
-        console.log(newUser, userAnswers);
+        // console.log(newUser);
     })
 });

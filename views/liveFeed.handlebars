@@ -30,28 +30,55 @@
         <!-- Large modal -->
         <button type="button" class="btn btn-outline-success" data-toggle="modal" data-target=".bd-example-modal-lg">Create New Post</button>
 
-        <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-lg" role="document">
+        <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <form id="cms">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title">New Post</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                              </button>
+                            <span aria-hidden="true">&times;</span>
+                        </button>
                     </div>
                     <div class="modal-body">
-                        <p>Location:</p>
-                        <p>Date:</p>
-                        <p>Time:</p>
-                        <p>Event Info:</p>
+                        <label for="title">Title:</label>
+                        <input placeholder="I'm going to Stevens!" type="text" class="form-control" id="title">
+                        <br />
+                        <label for="location">Location:</label>
+                        <input placeholder="Steven's Pass" type="text" class="form-control" id="location">
+                        <br />
+​
+                        <label for="category">Category:</label>
+                        <input placeholder="Skiing" type="text" class="form-control" id="category">
+                        <br />
+​
+                        <label for="Date">Date/Time:</label>
+                        <input placeholder="10/10/19" type="text" class="form-control" id="date">
+                        <br />
+​
+                        <label for="body">Event Info:</label>
+                        <textarea placeholder="share a link or write a little about the destination"
+                            class="form-control" rows="10" id="body"></textarea>
+​
+                        <div class="form-group">
+                            <label for="user">Select User:</label>
+                            <select class="custom-select" id="user">
+                            </select>
+                        </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
+                        <button type="submit" class="btn btn-success submit">Submit</button>
                     </div>
                 </div>
-            </div>
+            </form>
         </div>
+    </div>
+</div>
+​
+<br>
+<br>
     </div>
 
     <br>
