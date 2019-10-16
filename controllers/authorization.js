@@ -28,6 +28,7 @@ router.post('/signUp', function (req, res) {
     console.log('auth req.body', req.body)
     db.User.create({
         name: req.body.name,
+        username:req.body.username,
         password: req.body.password,
         DOB: req.body.DOB,
         q1: req.body.q1,
