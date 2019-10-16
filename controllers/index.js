@@ -34,7 +34,11 @@ router.get('/categories', function (req, res) {
     }
 })
 router.get('/livefeed', function (req, res) {
-    res.render('liveFeed')
+    if (!req.session.user) {
+        res.redirect("/auth/login")
+    } else {
+        res.render("livefeed")
+    }
 })
 router.get('/login', function (req, res) {
     res.render('login')
