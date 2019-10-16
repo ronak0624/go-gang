@@ -5,9 +5,9 @@ $(document).ready(function () {
         console.log("im working")
         var newUser = {
             name: $("#inputFirst4").val().trim() + " " + $("#inputLast4").val().trim(),
-            DOB: $("#inputDOB4").val(),
-            DOB: $("#inputDOB4").val(),
-            DOB: $("#inputDOB4").val(),
+            username: $("#inputUsername").val().trim(),
+            password: $("#inputPassword").val().trim(),
+            DOB: $("#inputDOB4").val().trim(),
             q1: $("#exampleFormControlSelect1").val(),
             a1: $("#exampleFormControlTextarea1").val().trim(),
             q2: $("#exampleFormControlSelect2").val(),
