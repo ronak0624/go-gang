@@ -6,12 +6,14 @@ $(document).ready(function () {
         var newUser = {
             name: $("#inputFirst4").val().trim() + " " + $("#inputLast4").val().trim(),
             DOB: $("#inputDOB4").val(),
+            DOB: $("#inputDOB4").val(),
+            DOB: $("#inputDOB4").val(),
             q1: $("#exampleFormControlSelect1").val(),
             a1: $("#exampleFormControlTextarea1").val().trim(),
-            q2: $("#exampleFormControlSelect1").val(),
+            q2: $("#exampleFormControlSelect2").val(),
             a2: $("#exampleFormControlTextarea2").val().trim(),
-            a3: $("#exampleFormControlTextarea3").val().trim(),
-            q3: $("#exampleFormControlSelect1").val()
+            q3: $("#exampleFormControlSelect3").val(),
+            a3: $("#exampleFormControlTextarea3").val().trim()
         }
 
         $.post("/auth/signUp", newUser).then(function (data) {
