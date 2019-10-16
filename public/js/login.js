@@ -11,6 +11,7 @@ $(document).ready(function () {
         //sending user loginInfo data 
         $.post("/auth/login", loginInfo).then(function (data) {
             console.log(data)
+            window.location.href = "/categories"
         })
         console.log(loginInfo)
     })
