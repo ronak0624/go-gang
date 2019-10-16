@@ -19,6 +19,7 @@ $(document).ready(function () {
         $.post("/auth/signUp", newUser).then(function (data) {
             console.log(data)
             window.location.href = "/auth/login"
+
         })
         // console.log(newUser);
     })
