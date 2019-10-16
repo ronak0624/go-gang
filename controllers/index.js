@@ -4,11 +4,7 @@ var db = require("../models");
 var authRoutes = require('./authorization');
 
 //appends "/auth/" to all routes imported from authorization.js
-router.use('/auth',authRoutes);
-
-router.get('/',function(req,res){
-    res.render('index');
-});
+router.use('/auth', authRoutes);
 
 router.post('/createPost',function(req,res){
     console.log(req.body);
@@ -23,5 +19,20 @@ router.post('/createPost',function(req,res){
         res.json(newPost);
     })
 });
+router.get('/', function (req, res) {
+    res.render('index')
+})
+router.get('/signup', function (req, res) {
+    res.render('signUp')
+})
+router.get('/categories', function (req, res) {
+    res.render('categories')
+})
+router.get('/livefeed', function (req, res) {
+    res.render('liveFeed')
+})
+router.get('/login', function (req, res) {
+    res.render('login')
+})
 
 module.exports = router;
