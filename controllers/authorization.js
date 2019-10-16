@@ -28,7 +28,7 @@ router.post('/signUp', function (req, res) {
     console.log('auth req.body', req.body)
     db.User.create({
         name: req.body.name,
-        username:req.body.username,
+        username: req.body.username,
         password: req.body.password,
         DOB: req.body.DOB,
         q1: req.body.q1,
@@ -53,7 +53,7 @@ router.get('/login', function (req, res) {
 router.post('/login', function (req, res) {
     db.User.findOne({
         where: {
-            name: req.body.name
+            username: req.body.username
         }
     }).then(function (dbUser) {
         //compares password send in req.body to one in database, will return true if matched.
