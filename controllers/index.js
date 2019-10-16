@@ -19,6 +19,7 @@ router.post('/createPost', function (req, res) {
         res.json(newPost);
     })
 });
+
 router.get('/', function (req, res) {
     res.render('index')
 })
