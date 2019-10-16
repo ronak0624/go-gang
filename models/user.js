@@ -62,7 +62,7 @@ module.exports = function (sequelize, DataTypes) {
         //     // as: 'Attendee'
         // });
     };
-
+    
     //sequelize hook, will run before model instance is created and hash password
 
     User.beforeCreate(function (user) {
