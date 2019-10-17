@@ -1,5 +1,7 @@
-body {
-    background: lightblue;
+#background {
+    background-image: url(/images/seattle-skyline.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 
@@ -10,6 +12,6 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white;
+    text-shadow: -1px -1px 0 lightskyblue, 1px -1px 0 lightskyblue, -1px 1px 0 lightskyblue, 1px 1px 0 lightskyblue;
     text-align: center;
 }
