@@ -47,7 +47,7 @@ router.get('/livefeed', function (req, res) {
         });
         res.render("liveFeed", {
             posts: allPosts
-        })
+        });
     }
 })
 
