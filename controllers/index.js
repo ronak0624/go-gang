@@ -45,7 +45,7 @@ router.get('/livefeed', function (req, res) {
         db.Post.findAll().then(function(posts){
             allPosts = posts;
         });
-        res.render("livefeed", {
+        res.render("liveFeed", {
             posts: allPosts
         })
     }
