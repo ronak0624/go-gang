@@ -15,10 +15,12 @@
     text-shadow: -1px -1px 0 lightskyblue, 1px -1px 0 lightskyblue, -1px 1px 0 lightskyblue, 1px 1px 0 lightskyblue;
     text-align: center;
 }
+
 ul{
     margin-left: 50%;
     transform: translate(-50%);
 }
+
 ul li{
     list-style: none !important;
 }
